@@ -1,0 +1,266 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wang Yan</title>
+  <link rel="preload" href="https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png" as="image">
+  <link rel="stylesheet" href="./index.css?v=portfolio-frosted-nav">
+</head>
+
+<body class="sunrise-to-day">
+  <div id="dappled-light">
+
+    <div id="glow"></div>
+    <div id="glow-bounce"></div>
+    <div class="perspective">
+      <div id="leaves" aria-hidden="true">
+        <svg style="width: 0; height: 0; position: absolute;">
+          <defs>
+            <filter id="wind" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" numOctaves="2" seed="1">
+                <animate attributeName="baseFrequency" dur="16s" keyTimes="0;0.33;0.66;1"
+                  values="0.005 0.003;0.01 0.009;0.008 0.004;0.005 0.003" repeatCount="indefinite" />
+              </feTurbulence>
+              <feDisplacementMap in="SourceGraphic">
+                <animate attributeName="scale" dur="20s" keyTimes="0;0.25;0.5;0.75;1" values="45;55;75;55;45"
+                  repeatCount="indefinite" />
+              </feDisplacementMap>
+            </filter>
+          </defs>
+        </svg>
+      </div>
+      <div id="blinds">
+        <div class="shutters">
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+          <div class="shutter"></div>
+        </div>
+        <div class="vertical">
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+    <div id="progressive-blur">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="grain"></div>
+  </div>
+
+<!-- content:start -->
+  <header class="site-nav">
+    <a class="nav-mark" href="#top">WY</a>
+    <nav>
+      <a href="#research">Research</a>
+      <a href="#engineering-projects">Engineering Projects</a>
+      <a href="#art-works">Art Works</a>
+      <a href="#updates">Updates</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="entrance">
+      <p class="archive-label">Last name(王)                First name(延)</p>
+      <h1>Wang Yan</h1>
+      <p class="subtitle"></p>
+      <div class="intro-copy">
+        <p>I am currently studying <span class="inline-term">Computer Science and Cognitive Science at Columbia University</span>. I previously earned a Bachelor of Engineering in Civil Engineering and a Master of Philosophy in Religious Art.</p>
+        <p>My research interests include autonomous agents and multi-agent systems, distributed decision-making and agent coordination under uncertainty, human-AI collaboration, computational approaches in agent-driven systems, and scalable AI architectures with an emphasis on safety and trustworthiness.</p>
+        <p>This site keeps a small archive of projects, code experiments, films, and visual studies. Before working on AI tools and interfaces, I worked across film production, artistic practice, and technology entrepreneurship. Those experiences continue to shape how I think about attention, trust, and experience.</p>
+      </div>
+      <div class="motif-path">
+        <span>Beijing / New York / Singapore / Bangkok</span>
+      </div>
+    </section>
+
+    <section class="archive-section" id="research">
+      <div class="section-kicker">
+        <span></span>
+      </div>
+      <div class="section-header">
+        <h2>Research</h2>
+        <p></p>
+      </div>
+      <div class="project-list">
+        <article class="project-entry">
+          <div class="entry-meta-block project-meta-block">
+            <p class="entry-meta project-meta">2026 · Agent Infrastructure / Trace Logging / Reproducibility</p>
+            <p class="entry-status project-status">Status: In progress</p>
+          </div>
+          <div>
+            <h3>Agent Workflow Replay Prototype</h3>
+            <p>Exploring a lightweight way to record, review, and replay tool-using AI agent sessions.</p>
+            <p class="project-detail">Role: author</p>
+            <p class="project-detail">Stack / Tools: Python, JSONL traces, CLI tools, replay logs</p>
+            <p class="project-links"></p>
+          </div>
+        </article>
+        <article class="project-entry">
+          <div class="entry-meta-block project-meta-block">
+            <p class="entry-meta project-meta">2025 · AI Tools / HCI / Developer Experience</p>
+
+          </div>
+          <div>
+            <h3>PromptDSL: Turning prompts into reusable workflows.</h3>
+            <p>Exploring how a lightweight prompt language can make AI workflows easier to structure, inspect, and reuse.</p>
+            <p class="project-detail">Role: author</p>
+            <p class="project-detail">Stack / Tools: Python, CLI tooling, Markdown, prompt engineering</p>
+            <p class="project-links"></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="archive-section" id="engineering-projects" data-time-trigger="midday">
+      <div class="section-kicker">
+        <span></span>
+      </div>
+      <div class="section-header">
+        <h2>Engineering Projects</h2>
+        <p></p>
+      </div>
+      <div class="project-list">
+        <article class="project-entry">
+          <div class="entry-meta-block project-meta-block">
+            <p class="entry-meta project-meta">2026 · AI Agents / Android Instrumentation / Logging</p>
+
+          </div>
+          <div>
+            <h3>ATLAS: An Instrumentation Harness for Android Agents</h3>
+            <p>A safe-by-default CLI harness for running Android emulator agent loops, capturing observations, and writing structured logs for reproducible mobile AI experiments.</p>
+            <p class="project-detail">Role: author</p>
+            <p class="project-detail">Stack / Tools: Java, Maven, Android SDK, adb, emulator, VLM action JSONL</p>
+            <p class="project-links"><a href="https://github.com/yw01x/ATLAS">GitHub</a></p>
+          </div>
+        </article>
+        <article class="project-entry">
+          <div class="entry-meta-block project-meta-block">
+            <p class="entry-meta project-meta">2026 · Human-Centered Design · advised by Harry West / Service Design / Video Prototype</p>
+
+          </div>
+          <div>
+            <h3>Doorstep</h3>
+            <p>A human-centered design project exploring how recent arrivals build trust, share local knowledge, and make time-sensitive decisions during neighborhood disruptions. The project proposes a low-pressure coordination service that helps residents move from uncertainty to action through nearby clusters, contextual alerts, and simple emergency status signals.</p>
+            <p class="project-detail">Role: research, video direction</p>
+            <p class="project-detail">Stack / Tools: final cut pro, video prototype, seedance 2.0, kling 3.0</p>
+            <p class="project-links"><a href="https://youtu.be/pmCOKHEQQjQ">Video</a></p>
+          </div>
+        </article>
+        <article class="project-entry">
+          <div class="entry-meta-block project-meta-block">
+            <p class="entry-meta project-meta">2025 · AI + Humans / HCI</p>
+
+          </div>
+          <div>
+            <h3>YanOS: An Operating System as Narrative Space</h3>
+            <p>YanOS is an original interactive application prototype that imagines an operating system as narrative space. This video documents the application experience rather than serving as the work itself. The project explores how interfaces shape memory, attention, and behavior through a retro desktop environment, layered narrative content, and custom interaction flows.</p>
+            <p class="project-detail">Role: Author</p>
+            <p class="project-detail">Stack / Tools: three.js, react.js, LLMs</p>
+            <p class="project-links"><a href="https://youtu.be/kt_97odEc5k?si=_f1TYvwzwonSo4LC">Video</a></p>
+          </div>
+        </article>
+        <article class="project-entry">
+          <div class="entry-meta-block project-meta-block">
+            <p class="entry-meta project-meta">2025 · AI + Humans / HCI</p>
+
+          </div>
+          <div>
+            <h3>Paper Plane: Anonymous Letters as Shared Urban Poetry</h3>
+            <p>Paper Plane is an interactive application between a poetic game and an AI-mediated writing experience. The demo video documents the application rather than serving as the work itself. In the experience, a user writes an anonymous letter, folds it into a digital paper plane, and releases it into a city. Each flight produces an AI-generated ending, turning private writing into a shared urban poem.</p>
+            <p class="project-detail">Role: drawing, photography, writing</p>
+            <p class="project-detail">Stack / Tools: sketchbook, photography, image annotation</p>
+            <p class="project-links"><a href="https://youtu.be/owHaPtW7FVY">Video</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="archive-section" id="art-works" data-time-trigger="night">
+      <div class="section-kicker">
+        <span></span>
+      </div>
+      <div class="section-header">
+        <h2>Art Works</h2>
+        <p></p>
+      </div>
+      <div class="project-list">
+        <article class="project-entry">
+          <div class="entry-meta-block project-meta-block">
+            <p class="entry-meta project-meta">2026 · AI Cinema / Film / Visual Research</p>
+
+          </div>
+          <div>
+            <h3>Threshold</h3>
+            <p>Threshold is a short experimental narrative about flooding, memory, and the fragile line between safety and disaster. Told through a first-person body-mounted perspective in contemporary Brooklyn, the film follows a person and their dog as a dream of cherry blossoms slowly gives way to rain, rising water, and a basement flood. The piece explores thresholds as both physical and emotional boundaries: a doorway, a warning line, a flood level, and the moment when care, attachment, and danger become inseparable.</p>
+            <p class="project-detail">Role: direction, editing, visual research</p>
+            <p class="project-detail">Stack / Tools: final cut pro, storyboards, kling 3.0</p>
+            <p class="project-links"><a href="https://youtu.be/WIQP8RQPbOI">Video</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="archive-section updates-section" id="updates">
+      <div class="section-kicker">
+        <span></span>
+      </div>
+      <div class="section-header">
+        <h2>Updates</h2>
+        <p></p>
+      </div>
+      <div class="update-list">
+        <article class="update-entry">
+          <div class="entry-meta-block update-meta-block">
+            <p class="entry-meta update-meta">May 2026 · Website</p>
+            <p class="entry-status update-status">Status: Current</p>
+          </div>
+          <div>
+            <h3>Portfolio Rebuild</h3>
+            <p>Rebuilt this portfolio as a Markdown-driven archive.</p>
+
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <h3>Focus</h3>
+      <p>AI agents · HCI · Visual Systems</p>
+    </div>
+      <div>
+        <h3>Contact</h3>
+        <p class="project-links"><a href="mailto:yw4586@columbia.edu">Email</a> <a href="./assets/Wang_Yan_CV.pdf">CV</a> <a href="https://github.com/yw01x">GitHub</a> <a href="https://www.youtube.com/@ywang2025">YouTube</a> <a href="https://www.linkedin.com/in/wangyan-omni/">LinkedIn</a></p>
+      </div>
+  </footer>
+  <!-- content:end -->
+</body>
+
+<script src="./index.js?v=portfolio-refresh-top"></script>
+
+</html>

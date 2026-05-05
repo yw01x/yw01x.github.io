@@ -1,0 +1,1002 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+body {
+  --day: #fffdfa;
+  --midday: #f9f7e9;
+  --afternoon: #f2d9b8;
+  --evening: #fccc83;
+  --dusk: #db7a2a;
+  --night: #0f131c;
+  --dawn: #16132b;
+  --morning: #9fb3bf;
+
+
+  --light: var(--day);
+  --dark: var(--night);
+  --shadow: #1a1917;
+  --bounce-light: #f5d7a6;
+  --line: color-mix(in srgb, var(--dark) 16%, transparent);
+  --muted: color-mix(in srgb, var(--dark) 58%, transparent);
+  --timing-fn: cubic-bezier(0.455, 0.190, 0.000, 0.985);
+
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  width: 100%;
+  color: var(--dark);
+  font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--light);
+
+  animation-duration: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--dark);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.site-nav,
+main {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  display: grid;
+  width: calc(100% - 3rem);
+  max-width: 980px;
+  margin: 0 auto;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1rem 0 0.85rem;
+  z-index: 10;
+}
+
+.site-nav::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 auto 0 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: rgb(244 242 234 / 0.2);
+  background: color-mix(in srgb, #f4f2ea 10%, transparent);
+  box-shadow:
+    0 0.8rem 2.4rem color-mix(in srgb, var(--shadow) 10%, transparent),
+    0 0.08rem 0.7rem color-mix(in srgb, var(--dark) 10%, transparent);
+  backdrop-filter: blur(80px) saturate(88%);
+  -webkit-backdrop-filter: blur(80px) saturate(88%);
+  content: "";
+}
+
+.nav-mark,
+.site-nav nav a,
+.archive-label,
+.section-kicker,
+.project-meta,
+.update-meta,
+.project-detail,
+.project-links,
+.motif-path {
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+.nav-mark {
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+
+.site-nav nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0;
+  overflow-x: auto;
+}
+
+.site-nav nav a {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.site-nav nav a + a::before {
+  display: inline-block;
+  width: 2.4rem;
+  color: var(--muted);
+  text-align: center;
+  content: "/";
+}
+
+main {
+  width: calc(100% - 3rem);
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.entrance {
+  display: grid;
+  align-content: center;
+  min-height: 42rem;
+  padding: 2rem 0 7rem;
+}
+
+.archive-label {
+  margin-bottom: 1.2rem;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.archive-label,
+.subtitle {
+  white-space: pre-wrap;
+}
+
+h1 {
+  max-width: 12ch;
+  margin-bottom: 1.2rem;
+  font-size: clamp(1rem, 9vw, 5rem);
+  font-weight: 500;
+  line-height: 0.94;
+}
+
+.subtitle {
+  margin-bottom: 2.5rem;
+  font-size: 1.22rem;
+}
+
+.intro-copy {
+  display: grid;
+  gap: 0.95rem;
+  max-width: 720px;
+  font-size: 1.02rem;
+  line-height: 1.76;
+}
+
+.intro-copy p,
+.section-header p,
+.project-entry p,
+.update-entry p,
+.site-footer p,
+.about-grid p {
+  margin-bottom: 0;
+}
+
+.motif-path {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.8rem;
+  margin-top: 3.2rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.motif-path span + span::before {
+  content: "/";
+  margin-right: 0.8rem;
+  color: var(--muted);
+}
+
+.archive-section {
+  padding: 3.5rem 0;
+}
+
+.section-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.section-kicker span + span::before {
+  content: "/";
+  margin-right: 0.6rem;
+}
+
+.section-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.05rem;
+  align-items: start;
+  margin-bottom: 2.8rem;
+}
+
+.section-header h2 {
+  margin-bottom: 0;
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.06;
+}
+
+.section-header p {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.74;
+}
+
+.project-list {
+  border-top: 1px solid var(--line);
+}
+
+.project-entry,
+.update-entry {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.34fr) minmax(0, 1fr);
+  gap: 2rem;
+  padding: 1.45rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-entry h3,
+.update-entry h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.14rem;
+  font-weight: 500;
+}
+
+.project-entry p,
+.update-entry p {
+  max-width: 42rem;
+  line-height: 1.68;
+}
+
+.inline-term {
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.92em;
+  line-height: 1;
+  color: color-mix(in srgb, var(--dusk) 100%, var(--evening) 20%);
+  background: color-mix(in srgb, var(--midday) 30%, transparent);
+  border: 0px solid color-mix(in srgb, var(--dark) 18%, transparent);
+  padding: 0.02em 0.22em 0.08em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.project-meta,
+.update-meta,
+.entry-status,
+.project-status,
+.update-status,
+.project-detail,
+.project-links {
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.58;
+}
+
+.entry-status {
+  margin: 0.32rem 0 0;
+  color: var(--muted);
+  font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 500;
+}
+
+.project-detail {
+  margin-top: 0.45rem;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.75rem;
+}
+
+.project-links a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.project-links a::before {
+  content: "[";
+}
+
+.project-links a::after {
+  content: "]";
+}
+
+.update-list {
+  border-top: 1px solid var(--line);
+}
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.62fr);
+  width: calc(100% - 3rem);
+  max-width: 980px;
+  margin: 0 auto;
+  gap: 2rem;
+  padding: 2.5rem 0 3.5rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.58;
+}
+
+.site-footer h3 {
+  margin: 0 0 0.75rem;
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.site-footer p {
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+.site-footer .project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.site-footer a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.site-footer a::before {
+  content: "[";
+}
+
+.site-footer a::after {
+  content: "]";
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.62fr);
+  gap: 2rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.45rem;
+}
+
+.about-grid h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+body.animation-ready {
+  transition: background-color 1.7s var(--timing-fn), color 1.2s var(--timing-fn);
+}
+
+body.sunrise-to-day:not(.animation-ready),
+body.sunrise-to-midday:not(.animation-ready) {
+  --light: var(--night);
+  --dark: var(--day);
+  --shadow: #030307;
+  --bounce-light: #1b293f;
+  background-color: var(--night);
+}
+
+body.animation-ready.midday-to-night,
+body.animation-ready.day-to-night {
+  animation-duration: 2.6s;
+  animation-fill-mode: forwards;
+  animation-name: sunset;
+  animation-timing-function: var(--timing-fn);
+}
+
+body.animation-ready.day-to-night {
+  animation-name: day-sunset;
+}
+
+body.animation-ready.sunrise-to-day,
+body.animation-ready.sunrise-to-midday {
+  animation-duration: 2.2s;
+  animation-fill-mode: forwards;
+  animation-name: sunrise;
+  animation-timing-function: var(--timing-fn);
+}
+
+body.animation-ready.sunrise-to-midday {
+  animation-name: sunrise-midday;
+}
+
+body.animation-ready.day-to-midday {
+  animation-duration: 1.9s;
+  animation-fill-mode: forwards;
+  animation-name: midday;
+  animation-timing-function: var(--timing-fn);
+}
+
+body.animation-ready.midday-to-day {
+  animation-duration: 1.9s;
+  animation-fill-mode: forwards;
+  animation-name: midday-reverse;
+  animation-timing-function: var(--timing-fn);
+}
+
+body.animation-ready.night-to-midday,
+body.animation-ready.night-to-day {
+  animation-duration: 2.8s;
+  animation-fill-mode: forwards;
+  animation-name: night-reverse-midday;
+  animation-timing-function: var(--timing-fn);
+}
+
+body.animation-ready.night-to-day {
+  animation-name: night-reverse-day;
+}
+
+body.animation-ready.sunrise-to-day,
+body.animation-ready.sunrise-to-midday,
+body.animation-ready.day-to-midday,
+body.animation-ready.midday-to-day,
+body.animation-ready.midday-to-night,
+body.animation-ready.day-to-night,
+body.animation-ready.night-to-midday,
+body.animation-ready.night-to-day {
+  transition: color 1.2s var(--timing-fn);
+}
+
+body.midday {
+  --light: var(--midday);
+  --dark: #121211;
+  --shadow: #11100e;
+  --bounce-light: #f9f7e9;
+  background-color: var(--midday);
+}
+
+body.afternoon {
+  --light: var(--afternoon);
+  --dark: var(--night);
+  --shadow: #15120f;
+  --bounce-light: #efc17d;
+  background-color: var(--afternoon);
+}
+
+body.dark {
+  --light: var(--night);
+  --dark: var(--day);
+  --shadow: #030307;
+  --bounce-light: #1b293f;
+  background-color: var(--night);
+}
+
+@keyframes sunrise {
+  0% {
+    background-color: var(--night);
+  }
+
+  10% {
+    background-color: var(--dawn);
+  }
+
+  35% {
+    background-color: var(--morning);
+  }
+
+  100% {
+    background-color: var(--day);
+  }
+}
+
+@keyframes sunrise-midday {
+  0% {
+    background-color: var(--night);
+  }
+
+  10% {
+    background-color: var(--dawn);
+  }
+
+  35% {
+    background-color: var(--morning);
+  }
+
+  100% {
+    background-color: var(--midday);
+  }
+}
+
+@keyframes midday {
+  0% {
+    background-color: var(--day);
+  }
+
+  35% {
+    background-color: #ffffff;
+  }
+
+  100% {
+    background-color: var(--midday);
+  }
+}
+
+@keyframes midday-reverse {
+  0% {
+    background-color: var(--midday);
+  }
+
+  65% {
+    background-color: #ffffff;
+  }
+
+  100% {
+    background-color: var(--day);
+  }
+}
+
+@keyframes afternoon {
+  0% {
+    background-color: var(--day);
+  }
+
+  45% {
+    background-color: var(--evening);
+  }
+
+  100% {
+    background-color: var(--afternoon);
+  }
+}
+
+@keyframes night-reverse-midday {
+  0% {
+    background-color: var(--night);
+  }
+
+  10% {
+    background-color: var(--dawn);
+  }
+
+  40% {
+    background-color: var(--dusk);
+  }
+
+  70% {
+    background-color: var(--evening);
+  }
+
+  100% {
+    background-color: var(--midday);
+  }
+}
+
+@keyframes night-reverse-day {
+  0% {
+    background-color: var(--night);
+  }
+
+  10% {
+    background-color: var(--dawn);
+  }
+
+  35% {
+    background-color: var(--dusk);
+  }
+
+  58% {
+    background-color: var(--evening);
+  }
+
+  82% {
+    background-color: var(--midday);
+  }
+
+  100% {
+    background-color: var(--day);
+  }
+}
+
+@keyframes sunset {
+  0% {
+    background-color: var(--midday);
+  }
+
+  30% {
+    background-color: var(--evening);
+  }
+
+  60% {
+    background-color: var(--dusk);
+  }
+
+  90% {
+    background-color: var(--dawn);
+  }
+
+  100% {
+    background-color: var(--night);
+  }
+}
+
+@keyframes day-sunset {
+  0% {
+    background-color: var(--day);
+  }
+
+  18% {
+    background-color: var(--midday);
+  }
+
+  40% {
+    background-color: var(--evening);
+  }
+
+  65% {
+    background-color: var(--dusk);
+  }
+
+  90% {
+    background-color: var(--dawn);
+  }
+
+  100% {
+    background-color: var(--night);
+  }
+}
+
+#dappled-light {
+  pointer-events: none;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+
+.grain {
+  filter: brightness(120%) sepia(50%);
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.grain:before {
+  animation: noise 1s steps(2) infinite;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+  content: "";
+  height: calc(100% + 20rem);
+  left: -10rem;
+  opacity: .12;
+  pointer-events: none;
+  position: fixed;
+  top: -10rem;
+  width: calc(100% + 20rem);
+}
+
+#progressive-blur {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#progressive-blur>div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  backdrop-filter: blur(var(--blur-amount));
+  mask-image: linear-gradient(252deg, transparent, transparent var(--stop1), black var(--stop2), black);
+}
+
+#progressive-blur>div:nth-child(1) {
+  --blur-amount: 6px;
+  --stop1: 0%;
+  --stop2: 0%;
+}
+
+#progressive-blur>div:nth-child(2) {
+  --blur-amount: 12px;
+  --stop1: 40%;
+  --stop2: 80%;
+}
+
+#progressive-blur>div:nth-child(3) {
+  --blur-amount: 48px;
+  --stop1: 40%;
+  --stop2: 70%;
+}
+
+#progressive-blur>div:nth-child(4) {
+  --blur-amount: 96px;
+  --stop1: 70%;
+  --stop2: 80%;
+}
+
+#glow {
+  position: absolute;
+  background: linear-gradient(309deg, var(--bounce-light), var(--bounce-light) 20%, transparent);
+  transition: background 1.0s var(--timing-fn);
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+}
+
+#glow-bounce {
+  content: "";
+  position: absolute;
+  background: linear-gradient(355deg, var(--bounce-light) 0%, transparent 30%, transparent 100%);
+  transition: background 1.0s var(--timing-fn);
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+}
+
+.perspective {
+  position: absolute;
+  transition: transform 1.7s var(--timing-fn), opacity 4s ease;
+  top: -30vh;
+  right: 0;
+  width: 80vw;
+  height: 130vh;
+  opacity: 0.3;
+  background-blend-mode: darken;
+  transform-origin: top right;
+  transform-style: preserve-3d;
+  transform: matrix3d(0.7500, -0.0625, 0.0000, 0.0008,
+      0.0000, 1.0000, 0.0000, 0.0000,
+      0.0000, 0.0000, 1.0000, 0.0000,
+      0.0000, 0.0000, 0.0000, 1.0000);
+}
+
+.dark .perspective {
+  opacity: 0.3;
+  transform: matrix3d(0.8333, 0.0833, 0.0000, 0.0003,
+      0.0000, 1.0000, 0.0000, 0.0000,
+      0.0000, 0.0000, 1.0000, 0.0000,
+      0.0000, 0.0000, 0.0000, 1.0000);
+}
+
+.midday .perspective {
+  opacity: 0.42;
+  transform: matrix3d(0.7600, -0.0350, 0.0000, 0.0007,
+      0.0000, 1.0000, 0.0000, 0.0000,
+      0.0000, 0.0000, 1.0000, 0.0000,
+      0.0000, 0.0000, 0.0000, 1.0000);
+}
+
+.afternoon .perspective {
+  opacity: 0.33;
+  transform: matrix3d(0.7900, 0.0100, 0.0000, 0.0005,
+      0.0000, 1.0000, 0.0000, 0.0000,
+      0.0000, 0.0000, 1.0000, 0.0000,
+      0.0000, 0.0000, 0.0000, 1.0000);
+}
+
+#leaves {
+  --leaf-opacity: 0.85;
+  position: absolute;
+  bottom: -20px;
+  right: -700px;
+  width: 1600px;
+  height: 1400px;
+  background-image: url("./leaves.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: var(--leaf-opacity);
+  animation: billow 5s ease-in-out infinite;
+  pointer-events: none;
+  transform-origin: 50% 50%;
+  will-change: transform, opacity;
+}
+
+#blinds {
+  position: relative;
+  width: 100%;
+}
+
+#blinds .shutter,
+#blinds .bar {
+  background-color: var(--shadow);
+}
+
+#blinds>.shutters {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 60px;
+  transition: gap 1.0s var(--timing-fn);
+}
+
+.dark #blinds>.shutters {
+  gap: 20px;
+}
+
+.midday #blinds>.shutters {
+  gap: 76px;
+}
+
+.afternoon #blinds>.shutters {
+  gap: 42px;
+}
+
+#blinds>.vertical {
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.vertical>.bar {
+  width: 5;
+  height: 100%;
+}
+
+.shutter {
+  width: 100%;
+  height: 40px;
+  transition: height 1.0s var(--timing-fn);
+}
+
+.dark .shutter {
+  height: 80px;
+}
+
+.midday .shutter {
+  height: 28px;
+}
+
+.afternoon .shutter {
+  height: 54px;
+}
+
+@keyframes billow {
+  0% {
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg) scale(1);
+  }
+
+  25% {
+    transform: perspective(400px) rotateX(1deg) rotateY(2deg) scale(1.02);
+  }
+
+  50% {
+    transform: perspective(400px) rotateX(-4deg) rotateY(-2deg) scale(0.97);
+  }
+
+  75% {
+    transform: perspective(400px) rotateX(1deg) rotateY(-1deg) scale(1.04);
+  }
+
+  100% {
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg) scale(1);
+  }
+}
+
+@keyframes noise {
+  0% {
+    transform: translate3d(0, 2rem, 0);
+  }
+
+  10% {
+    transform: translate3d(-1rem, -2rem, 0);
+  }
+
+  20% {
+    transform: translate3d(-4rem, 1rem, 0);
+  }
+
+  30% {
+    transform: translate3d(4.5rem, -4.5rem, 0);
+  }
+
+  40% {
+    transform: translate3d(-1rem, 3.5rem, 0);
+  }
+
+  50% {
+    transform: translate3d(-4.5rem, -2rem, 0);
+  }
+
+  60% {
+    transform: translate3d(1rem, 3rem, 0);
+  }
+
+  70% {
+    transform: translate3d(3.5rem, -4rem, 0);
+  }
+
+  80% {
+    transform: translate3d(-4.5rem, .5rem, 0);
+  }
+
+  90% {
+    transform: translate3d(3rem, -2.5rem, 0);
+  }
+
+  100% {
+    transform: translate3d(-3.5rem, 0, 0);
+  }
+}
+
+@media (max-width: 860px) {
+  .site-nav,
+  main {
+    width: calc(100% - 2rem);
+  }
+
+  .site-nav {
+    gap: 1rem;
+  }
+
+  .site-nav nav {
+    justify-content: flex-start;
+  }
+
+  .entrance {
+    min-height: auto;
+    padding: 7rem 0 5.5rem;
+  }
+
+  .archive-section {
+    padding: 5rem 0;
+  }
+
+  .section-header,
+  .project-entry,
+  .update-entry,
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
+  .site-footer {
+    width: calc(100% - 2rem);
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-nav {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .site-nav nav {
+    gap: 0.75rem;
+    max-width: calc(100vw - 2rem);
+  }
+
+  .archive-label,
+  .section-kicker,
+  .project-meta,
+  .update-meta,
+  .project-detail,
+  .project-links,
+  .site-footer,
+  .motif-path {
+    font-size: 0.69rem;
+  }
+
+  .intro-copy,
+  .section-header p,
+  .project-entry p,
+  .update-entry p,
+  .about-grid p {
+    max-width: 34ch;
+  }
+}
