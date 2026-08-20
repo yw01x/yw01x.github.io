@@ -298,6 +298,10 @@ h1 {
   margin-top: 0.45rem;
 }
 
+.project-entry[id] {
+  scroll-margin-top: 5rem;
+}
+
 .project-links {
   display: flex;
   flex-wrap: wrap;
