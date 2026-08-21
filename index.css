@@ -136,9 +136,10 @@ main {
 
 .entrance {
   display: grid;
-  align-content: center;
+  /* Keep the name at a deliberate, consistent starting point as the bio grows. */
+  align-content: start;
   min-height: 42rem;
-  padding: 2rem 0 7rem;
+  padding: 10rem 0 10rem;
 }
 
 .archive-label {
@@ -169,6 +170,7 @@ h1 {
   display: grid;
   gap: 0.95rem;
   max-width: 720px;
+  margin-top: 5rem;
   font-size: 1.02rem;
   line-height: 1.76;
 }
